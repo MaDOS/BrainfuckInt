@@ -15,5 +15,10 @@ namespace BrainfuckIntLib.Instructions
         {
             this.program.Memory.DecrementData();
         }
+
+        public override string ToString()
+        {
+            return "-";
+        }
     }
 }

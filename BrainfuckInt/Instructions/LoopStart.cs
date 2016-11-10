@@ -21,5 +21,10 @@ namespace BrainfuckIntLib.Instructions
                 this.program.PC = this.loopReference.End;
             }
         }
+
+        public override string ToString()
+        {
+            return "[";
+        }
     }
 }

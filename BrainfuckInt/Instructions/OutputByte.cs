@@ -15,5 +15,10 @@ namespace BrainfuckIntLib.Instructions
         {
             Console.Write(Convert.ToChar(this.program.Memory.Data));
         }
+
+        public override string ToString()
+        {
+            return ".";
+        }
     }
 }

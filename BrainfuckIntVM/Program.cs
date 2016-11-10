@@ -21,8 +21,6 @@ namespace BrainfuckIntVM
 
             BrainfuckIntLib.Program program = new BrainfuckIntLib.Program(new System.IO.FileInfo(args[0]));
             program.Execute();
-
-            Console.ReadKey(true);
         }
     }
 }

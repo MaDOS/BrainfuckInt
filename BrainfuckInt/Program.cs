@@ -17,6 +17,7 @@ namespace BrainfuckIntLib
         {
             this.Parse(inputSource);
         }
+
         public void Parse(FileInfo inputSource)
         {
             char chr;
