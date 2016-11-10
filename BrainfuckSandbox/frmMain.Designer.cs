@@ -28,39 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.msMain = new System.Windows.Forms.MenuStrip();
+            this.msFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.msFile_LoadProgram = new System.Windows.Forms.ToolStripMenuItem();
             this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.runWithDebuggerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.tsStatus = new System.Windows.Forms.StatusStrip();
+            this.tsStatusLblLoadedProgram = new System.Windows.Forms.ToolStripStatusLabel();
+            this.msMain.SuspendLayout();
+            this.tsStatus.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // msMain
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
+            this.msMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.msFile,
             this.runToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(850, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.msMain.Location = new System.Drawing.Point(0, 0);
+            this.msMain.Name = "msMain";
+            this.msMain.Size = new System.Drawing.Size(850, 24);
+            this.msMain.TabIndex = 0;
+            this.msMain.Text = "menuStrip1";
             // 
-            // fileToolStripMenuItem
+            // msFile
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.msFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.msFile_LoadProgram});
+            this.msFile.Name = "msFile";
+            this.msFile.Size = new System.Drawing.Size(37, 20);
+            this.msFile.Text = "File";
             // 
-            // openToolStripMenuItem
+            // msFile_LoadProgram
             // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.openToolStripMenuItem.Text = "Open";
+            this.msFile_LoadProgram.Name = "msFile_LoadProgram";
+            this.msFile_LoadProgram.Size = new System.Drawing.Size(152, 22);
+            this.msFile_LoadProgram.Text = "Load Program";
+            this.msFile_LoadProgram.Click += new System.EventHandler(this.msFile_LoadProgram_Click);
             // 
             // runToolStripMenuItem
             // 
@@ -83,17 +87,36 @@
             this.runWithDebuggerToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.runWithDebuggerToolStripMenuItem.Text = "Run with Debugger";
             // 
+            // tsStatus
+            // 
+            this.tsStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsStatusLblLoadedProgram});
+            this.tsStatus.Location = new System.Drawing.Point(0, 392);
+            this.tsStatus.Name = "tsStatus";
+            this.tsStatus.Size = new System.Drawing.Size(850, 22);
+            this.tsStatus.TabIndex = 1;
+            this.tsStatus.Text = "statusStrip1";
+            // 
+            // tsStatusLblLoadedProgram
+            // 
+            this.tsStatusLblLoadedProgram.Name = "tsStatusLblLoadedProgram";
+            this.tsStatusLblLoadedProgram.Size = new System.Drawing.Size(101, 17);
+            this.tsStatusLblLoadedProgram.Text = "Loaded Program: ";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 414);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.tsStatus);
+            this.Controls.Add(this.msMain);
+            this.MainMenuStrip = this.msMain;
             this.Name = "frmMain";
             this.Text = "Brainfuck Sandbox";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.msMain.ResumeLayout(false);
+            this.msMain.PerformLayout();
+            this.tsStatus.ResumeLayout(false);
+            this.tsStatus.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,12 +124,14 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip msMain;
+        private System.Windows.Forms.ToolStripMenuItem msFile;
+        private System.Windows.Forms.ToolStripMenuItem msFile_LoadProgram;
         private System.Windows.Forms.ToolStripMenuItem runToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem runToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem runWithDebuggerToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip tsStatus;
+        private System.Windows.Forms.ToolStripStatusLabel tsStatusLblLoadedProgram;
     }
 }
 
