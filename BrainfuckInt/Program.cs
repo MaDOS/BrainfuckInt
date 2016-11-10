@@ -72,8 +72,8 @@ namespace BrainfuckIntLib
         public Program(FileInfo inputSource, bool loadDebugInfo)
         {
             this.Name = inputSource.Name;
-            this.Parse(inputSource);
             this.loadDebugInfo = loadDebugInfo;
+            this.Parse(inputSource);
         }
 
         public void Parse(FileInfo inputSource)
