@@ -14,7 +14,7 @@ namespace BrainfuckIntLib
         public Heap Memory = new Heap();
 
         private int pc = 0;
-        private string name;
+        private FileInfo file;
         private bool loadDebugInfo = false;
 
         public bool DebugEnabled
@@ -35,7 +35,7 @@ namespace BrainfuckIntLib
             internal set
             {
                 pc = value;
-                PCChanged();
+                PCChanged?.Invoke();
             }
         }
 
@@ -43,12 +43,7 @@ namespace BrainfuckIntLib
         {
             get
             {
-                return name;
-            }
-
-            protected set
-            {
-                name = value;
+                return file.Name;
             }
         }
 
@@ -60,28 +55,36 @@ namespace BrainfuckIntLib
             }
         }
 
+        public FileInfo File
+        {
+            get
+            {
+                return file;
+            }
+        }
+
         public delegate void PCChangedEventHandler();
         public event PCChangedEventHandler PCChanged;
 
         public Program(FileInfo inputSource)
         {
-            this.Name = inputSource.Name;
-            this.Parse(inputSource);
+            this.file = inputSource;
+            this.Parse();
         }
 
         public Program(FileInfo inputSource, bool loadDebugInfo)
         {
-            this.Name = inputSource.Name;
+            this.file = inputSource;
             this.loadDebugInfo = loadDebugInfo;
-            this.Parse(inputSource);
+            this.Parse();
         }
 
-        public void Parse(FileInfo inputSource)
+        public void Parse()
         {
             char chr;
             int position = 0;
             string commentBuffer = "";
-            StreamReader sr = new StreamReader(inputSource.FullName);
+            StreamReader sr = new StreamReader(this.file.FullName);
             Stack<LoopReference> loopRefStack = new Stack<LoopReference>();
             LoopReference currLoopRef;
 
