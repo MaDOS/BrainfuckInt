@@ -9,15 +9,15 @@ namespace BrainfuckIntLib
     public abstract class Instruction
     {
         protected Program program;
-        protected long location;
+        protected int location;
 
-        public Instruction(Program program, long location)
+        public Instruction(Program program, int location)
         {
             this.program = program;
             this.location = location;
         }
 
-        public long Location
+        public int Location
         {
             get
             {

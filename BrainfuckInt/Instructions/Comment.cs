@@ -9,8 +9,10 @@ namespace BrainfuckIntLib.Instructions
     public class Comment : Instruction
     {
         private string message;
-        public Comment(Program program, int location) : base(program, location)
-        { }
+        public Comment(Program program, int location, string message) : base(program, location)
+        {
+            this.message = message;
+        }
 
         public string Message
         {
@@ -27,12 +29,12 @@ namespace BrainfuckIntLib.Instructions
 
         public override void Execute()
         {
-            Console.WriteLine("I'm a comment I should not be executed!");
+            Console.WriteLine($"I'm a comment I should not be executed! Comment Message:{this.message}");
         }
 
         public override string ToString()
         {
-            return $"\"{this.message}\" ### {base.ToString()}";
+            return this.message;
         }
     }
 }
