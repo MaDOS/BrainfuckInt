@@ -47,7 +47,7 @@
             this.runToolStripMenuItem});
             this.msMain.Location = new System.Drawing.Point(0, 0);
             this.msMain.Name = "msMain";
-            this.msMain.Size = new System.Drawing.Size(850, 24);
+            this.msMain.Size = new System.Drawing.Size(911, 24);
             this.msMain.TabIndex = 0;
             this.msMain.Text = "menuStrip1";
             // 
@@ -80,6 +80,7 @@
             this.runToolStripMenuItem1.Name = "runToolStripMenuItem1";
             this.runToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
             this.runToolStripMenuItem1.Text = "Run";
+            this.runToolStripMenuItem1.Click += new System.EventHandler(this.runToolStripMenuItem1_Click);
             // 
             // runWithDebuggerToolStripMenuItem
             // 
@@ -91,9 +92,9 @@
             // 
             this.tsStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsStatusLblLoadedProgram});
-            this.tsStatus.Location = new System.Drawing.Point(0, 392);
+            this.tsStatus.Location = new System.Drawing.Point(0, 544);
             this.tsStatus.Name = "tsStatus";
-            this.tsStatus.Size = new System.Drawing.Size(850, 22);
+            this.tsStatus.Size = new System.Drawing.Size(911, 22);
             this.tsStatus.TabIndex = 1;
             this.tsStatus.Text = "statusStrip1";
             // 
@@ -107,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 414);
+            this.ClientSize = new System.Drawing.Size(911, 566);
             this.Controls.Add(this.tsStatus);
             this.Controls.Add(this.msMain);
             this.MainMenuStrip = this.msMain;

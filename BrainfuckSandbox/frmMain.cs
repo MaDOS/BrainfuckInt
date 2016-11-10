@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 using BrainfuckIntLib;
 
 namespace BrainfuckSandbox
@@ -51,6 +52,17 @@ namespace BrainfuckSandbox
 
                 this.LoadedProgram = new BrainfuckIntLib.Program(file, true);
             }
+        }
+
+        private void runToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Process process = new Process();
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+
+            startInfo.FileName = "brainfuckvm.exe";
+            startInfo.Arguments = loadedProgram.File.FullName;
+            process.StartInfo = startInfo;
+            process.Start();
         }
     }
 }
