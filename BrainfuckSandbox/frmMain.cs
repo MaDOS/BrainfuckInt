@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using BrainfuckIntLib;
 
 namespace BrainfuckSandbox
@@ -39,10 +41,10 @@ namespace BrainfuckSandbox
         private void msFile_LoadProgram_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            if(ofd.ShowDialog() == DialogResult.OK)
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
                 FileInfo file = new FileInfo(ofd.FileName);
-                if(!file.Exists)
+                if (!file.Exists)
                 {
                     string message = $"Program does not exist! ### {file.FullName}";
                     Console.WriteLine(message);
@@ -54,15 +56,13 @@ namespace BrainfuckSandbox
             }
         }
 
-        private void runToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void msRun_Run_Click(object sender, EventArgs e)
         {
-            Process process = new Process();
-            ProcessStartInfo startInfo = new ProcessStartInfo();
+            this.LoadedProgram.Execute();
+        }
 
-            startInfo.FileName = "brainfuckvm.exe";
-            startInfo.Arguments = loadedProgram.File.FullName;
-            process.StartInfo = startInfo;
-            process.Start();
+        private void msRun_RunWithDebug_Click(object sender, EventArgs e)
+        {
         }
     }
 }

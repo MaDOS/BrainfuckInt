@@ -32,8 +32,8 @@
             this.msFile = new System.Windows.Forms.ToolStripMenuItem();
             this.msFile_LoadProgram = new System.Windows.Forms.ToolStripMenuItem();
             this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.runToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.runWithDebuggerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.msRun_Run = new System.Windows.Forms.ToolStripMenuItem();
+            this.ms_Run_RunWithDebug = new System.Windows.Forms.ToolStripMenuItem();
             this.tsStatus = new System.Windows.Forms.StatusStrip();
             this.tsStatusLblLoadedProgram = new System.Windows.Forms.ToolStripStatusLabel();
             this.msMain.SuspendLayout();
@@ -62,31 +62,32 @@
             // msFile_LoadProgram
             // 
             this.msFile_LoadProgram.Name = "msFile_LoadProgram";
-            this.msFile_LoadProgram.Size = new System.Drawing.Size(152, 22);
+            this.msFile_LoadProgram.Size = new System.Drawing.Size(149, 22);
             this.msFile_LoadProgram.Text = "Load Program";
             this.msFile_LoadProgram.Click += new System.EventHandler(this.msFile_LoadProgram_Click);
             // 
             // runToolStripMenuItem
             // 
             this.runToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.runToolStripMenuItem1,
-            this.runWithDebuggerToolStripMenuItem});
+            this.msRun_Run,
+            this.ms_Run_RunWithDebug});
             this.runToolStripMenuItem.Name = "runToolStripMenuItem";
             this.runToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.runToolStripMenuItem.Text = "Run";
             // 
-            // runToolStripMenuItem1
+            // msRun_Run
             // 
-            this.runToolStripMenuItem1.Name = "runToolStripMenuItem1";
-            this.runToolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
-            this.runToolStripMenuItem1.Text = "Run";
-            this.runToolStripMenuItem1.Click += new System.EventHandler(this.runToolStripMenuItem1_Click);
+            this.msRun_Run.Name = "msRun_Run";
+            this.msRun_Run.Size = new System.Drawing.Size(176, 22);
+            this.msRun_Run.Text = "Run";
+            this.msRun_Run.Click += new System.EventHandler(this.msRun_Run_Click);
             // 
-            // runWithDebuggerToolStripMenuItem
+            // ms_Run_RunWithDebug
             // 
-            this.runWithDebuggerToolStripMenuItem.Name = "runWithDebuggerToolStripMenuItem";
-            this.runWithDebuggerToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.runWithDebuggerToolStripMenuItem.Text = "Run with Debugger";
+            this.ms_Run_RunWithDebug.Name = "ms_Run_RunWithDebug";
+            this.ms_Run_RunWithDebug.Size = new System.Drawing.Size(176, 22);
+            this.ms_Run_RunWithDebug.Text = "Run with Debugger";
+            this.ms_Run_RunWithDebug.Click += new System.EventHandler(this.msRun_RunWithDebug_Click);
             // 
             // tsStatus
             // 
@@ -129,8 +130,8 @@
         private System.Windows.Forms.ToolStripMenuItem msFile;
         private System.Windows.Forms.ToolStripMenuItem msFile_LoadProgram;
         private System.Windows.Forms.ToolStripMenuItem runToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem runToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem runWithDebuggerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem msRun_Run;
+        private System.Windows.Forms.ToolStripMenuItem ms_Run_RunWithDebug;
         private System.Windows.Forms.StatusStrip tsStatus;
         private System.Windows.Forms.ToolStripStatusLabel tsStatusLblLoadedProgram;
     }

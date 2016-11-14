@@ -66,11 +66,9 @@ namespace BrainfuckIntLib
         public delegate void PCChangedEventHandler();
         public event PCChangedEventHandler PCChanged;
 
-        public Program(FileInfo inputSource)
-        {
-            this.file = inputSource;
-            this.Parse();
-        }
+        public Program(FileInfo inputSource) 
+            : this(inputSource, false)
+        { }
 
         public Program(FileInfo inputSource, bool loadDebugInfo)
         {
@@ -126,7 +124,7 @@ namespace BrainfuckIntLib
 
                         instruction = new Instructions.LoopEnd(this, position, currLoopRef);
                         break;
-                    default: //Basically comments are being parsed here to add get debug info
+                    default: //Basically comments are being parsed here to add/get debug info
                         if(!this.loadDebugInfo)
                         {
                             instruction = null;

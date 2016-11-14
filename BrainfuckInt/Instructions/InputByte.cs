@@ -10,10 +10,10 @@ namespace BrainfuckIntLib.Instructions
     {
         public InputByte(Program program, int location) : base(program, location)
         { }
-
+        
         public override void Execute()
         {
-            this.program.Memory.Data = Convert.ToByte(Console.ReadKey().KeyChar);
+            this.program.Memory.Data = Convert.ToByte(Console.ReadKey().KeyChar);            
         }
 
         public override string ToString()
