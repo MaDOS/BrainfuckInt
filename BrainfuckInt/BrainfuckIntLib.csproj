@@ -51,6 +51,7 @@
     <Compile Include="Instructions\OutputByte.cs" />
     <Compile Include="Instructions\PointerDecrement.cs" />
     <Compile Include="Instructions\PointerIncrement.cs" />
+    <Compile Include="Interpreter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LoopReference.cs" />

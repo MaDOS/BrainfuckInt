@@ -58,7 +58,7 @@ namespace BrainfuckSandbox
 
         private void msRun_Run_Click(object sender, EventArgs e)
         {
-            this.LoadedProgram.Execute();
+            new Interpreter(this.loadedProgram).RunProgram();
         }
 
         private void msRun_RunWithDebug_Click(object sender, EventArgs e)

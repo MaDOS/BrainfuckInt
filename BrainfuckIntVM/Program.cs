@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using BrainfuckIntLib;
 
 namespace BrainfuckIntVM
@@ -20,7 +21,10 @@ namespace BrainfuckIntVM
             }
 
             BrainfuckIntLib.Program program = new BrainfuckIntLib.Program(new System.IO.FileInfo(args[0]));
-            program.Execute();
+
+            ManualResetEvent mrse = new ManualResetEvent(false);
+            new Interpreter(program).RunProgram(mrse);
+            mrse.WaitOne();
         }
     }
 }

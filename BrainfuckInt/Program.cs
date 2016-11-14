@@ -181,7 +181,7 @@ namespace BrainfuckIntLib
             }            
         }
 
-        public void Execute()
+        internal void Execute()
         {
             for(PC = 0; PC < this.source.Count; PC++)
             {
@@ -189,7 +189,7 @@ namespace BrainfuckIntLib
             }
         }
 
-        public void Step()
+        internal void Step()
         {
             if(PC < this.source.Count)
             {
