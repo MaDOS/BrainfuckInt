@@ -12,6 +12,9 @@ namespace BrainfuckIntLib
         public List<Instruction> source = new List<Instruction>();
         public Dictionary<int, List<Instructions.Comment>> DebugInformation = new Dictionary<int, List<Instructions.Comment>>();
         public Heap Memory = new Heap();
+        
+        public delegate void PCChangedEventHandler();
+        public event PCChangedEventHandler PCChanged;
 
         private int instructionPointer = 0;
         private FileInfo file;
@@ -62,9 +65,6 @@ namespace BrainfuckIntLib
                 return file;
             }
         }
-
-        public delegate void PCChangedEventHandler();
-        public event PCChangedEventHandler PCChanged;
 
         public Program(FileInfo inputSource) 
             : this(inputSource, false)
