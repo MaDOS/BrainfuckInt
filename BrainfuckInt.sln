@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrainfuckIntVM", "Brainfuck
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrainfuckSandbox", "BrainfuckSandbox\BrainfuckSandbox.csproj", "{1CEC0AB3-1760-4A5F-81CA-5D07DEFF0135}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryView", "MemoryView\MemoryView.csproj", "{CE8BF574-E73B-4DF3-8625-B1135AEF922F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1CEC0AB3-1760-4A5F-81CA-5D07DEFF0135}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CEC0AB3-1760-4A5F-81CA-5D07DEFF0135}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CEC0AB3-1760-4A5F-81CA-5D07DEFF0135}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE8BF574-E73B-4DF3-8625-B1135AEF922F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE8BF574-E73B-4DF3-8625-B1135AEF922F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE8BF574-E73B-4DF3-8625-B1135AEF922F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE8BF574-E73B-4DF3-8625-B1135AEF922F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
