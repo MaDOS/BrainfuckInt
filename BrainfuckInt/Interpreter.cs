@@ -34,27 +34,30 @@ namespace BrainfuckIntLib
         {
             get
             {
-                return this.program.source[this.instructionPointer];
+                return this.program.source[this.InstructionPointer];
             }
         }
 
-        internal int instructionPointer
+        public int InstructionPointer
         {
             get
             {
-                return this.program.PC;
+                return this.program.InstructionPointer;
+            }
+            protected set
+            {
+                this.program.InstructionPointer = value;
             }
         }
 
-
         public async void RunProgram()
         {
-            await Task.Factory.StartNew(() => this.Program.Execute());
+            await Task.Factory.StartNew(() => this.Execute());
         }
 
         public async void RunProgram(ManualResetEvent mrse) //Use this if you need to block your main Thread as long as the programm runs
         {
-            await Task.Factory.StartNew(() => this.Program.Execute());
+            await Task.Factory.StartNew(() => this.Execute());
             mrse.Set();
         }
 
@@ -65,7 +68,7 @@ namespace BrainfuckIntLib
 
         private void Run()
         {
-            for (this.program.PC = 0; this.program.PC < this.program.source.Count; this.program.PC++)
+            for (this.InstructionPointer = 0; this.InstructionPointer < this.Program.source.Count; this.InstructionPointer++)
             {
                 this.Step();
             }
@@ -73,23 +76,42 @@ namespace BrainfuckIntLib
 
         private void Step()
         {
-            if (breakPoints.ContainsKey(this.instructionPointer))
+            if (breakPoints.ContainsKey(this.InstructionPointer))
             {
                 pauseReset.Reset();
 
                 this.BreakPointHit(new BreakPointHitEventArgs()
                 {
-                    InstructionPointer = this.instructionPointer,
+                    InstructionPointer = this.InstructionPointer,
                     NextInstruction = this.nextInstruction,
                     PauseReset = pauseReset
                 });
                 pauseReset.WaitOne();
+            }
+
+            if (this.InstructionPointer < this.Program.source.Count)
+            {
+                this.Program.source[this.InstructionPointer].Execute();
+                this.InstructionPointer++;
             }
         }
 
         public void Resume()
         {
             pauseReset.Set();
+        }
+
+        public void Pause()
+        {
+            pauseReset.Reset();
+        }
+
+        internal void Execute()
+        {
+            for (this.InstructionPointer = 0; this.InstructionPointer < this.Program.source.Count; this.InstructionPointer++)
+            {
+                this.Program.source[this.InstructionPointer].Execute();
+            }
         }
 
         public void AddBreakPoint(BreakPoint breakPoint)

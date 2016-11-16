@@ -18,7 +18,7 @@ namespace BrainfuckIntLib.Instructions
         {
             if(this.program.Memory.Data == 0)
             {
-                this.program.PC = this.loopReference.End;
+                this.program.InstructionPointer = this.loopReference.End;
             }
         }
 

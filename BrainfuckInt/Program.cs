@@ -13,7 +13,7 @@ namespace BrainfuckIntLib
         public Dictionary<int, List<Instructions.Comment>> DebugInformation = new Dictionary<int, List<Instructions.Comment>>();
         public Heap Memory = new Heap();
 
-        private int pc = 0;
+        private int instructionPointer = 0;
         private FileInfo file;
         private bool loadDebugInfo = false;
 
@@ -25,16 +25,16 @@ namespace BrainfuckIntLib
             }
         }
 
-        public int PC
+        public int InstructionPointer
         {
             get
             {
-                return pc;
+                return instructionPointer;
             }
 
             internal set
             {
-                pc = value;
+                instructionPointer = value;
                 PCChanged?.Invoke();
             }
         }
@@ -179,23 +179,6 @@ namespace BrainfuckIntLib
                     }
                 }
             }            
-        }
-
-        internal void Execute()
-        {
-            for(PC = 0; PC < this.source.Count; PC++)
-            {
-                this.source[PC].Execute();
-            }
-        }
-
-        internal void Step()
-        {
-            if(PC < this.source.Count)
-            {
-                this.source[PC].Execute();
-                PC++;
-            }
         }
     }
 }
