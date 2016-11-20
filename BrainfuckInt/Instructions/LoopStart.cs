@@ -16,7 +16,7 @@ namespace BrainfuckIntLib.Instructions
 
         public override void Execute()
         {
-            if(this.program.Memory.Data == 0)
+            if(this.program.Memory.activeValue == 0)
             {
                 this.program.InstructionPointer = this.loopReference.End;
             }

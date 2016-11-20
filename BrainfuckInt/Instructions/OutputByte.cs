@@ -13,7 +13,7 @@ namespace BrainfuckIntLib.Instructions
 
         public override void Execute()
         {
-            Console.Write(Convert.ToChar(this.program.Memory.Data));
+            Console.Write(Convert.ToChar(this.program.Memory.activeValue));
         }
 
         public override string ToString()

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using MemoryVirtualization;
+using MemoryVirtualization.Cells;
 
 namespace BrainfuckIntLib
 {
@@ -11,7 +13,8 @@ namespace BrainfuckIntLib
     {
         public List<Instruction> source = new List<Instruction>();
         public Dictionary<int, List<Instructions.Comment>> DebugInformation = new Dictionary<int, List<Instructions.Comment>>();
-        public Heap Memory = new Heap();
+
+        public PointedHeap<_8BitCell, byte> Memory = new PointedHeap<_8BitCell, byte>();
         
         public delegate void PCChangedEventHandler();
         public event PCChangedEventHandler PCChanged;

@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Heap.cs" />
     <Compile Include="Instruction.cs" />
     <Compile Include="Instructions\Comment.cs" />
     <Compile Include="Instructions\Decrement.cs" />
@@ -55,6 +54,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LoopReference.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MemoryVirtualization\MemoryVirtualization.csproj">
+      <Project>{9952a95d-7554-4eb0-993d-d66a8f5aade3}</Project>
+      <Name>MemoryVirtualization</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
